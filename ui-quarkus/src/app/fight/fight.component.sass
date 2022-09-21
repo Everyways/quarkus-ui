@@ -1,0 +1,49 @@
+@import '../../variables'
+@import '../../mixins'
+
+.heroes-card
+    max-width: 400px
+    @include box-shadow(7px -7px 9px $shadow-color, -7px 7px 9px $shadow-background-dark)
+    &:hover
+        transform: scale(.95)
+
+.hero
+    @include border
+
+.action
+    @include border
+    @include box-shadow(7px -7px 9px $shadow-color, -7px 7px 9px $shadow-background-dark)
+
+.villain
+    @include border 
+
+.win
+    border: 10px solid $win-color
+
+.lost 
+    @include lost
+
+.primary
+    color: $primary-color
+
+.blank
+    color: #fff
+
+.center
+    display: flex
+    justify-content: center
+
+.winner-text
+    margin: 1rem
+
+.mat-card img, .mat-card-image
+    border-radius: 50% !important
+    display: block
+    margin: auto
+
+.mat-card-content
+    p
+        max-width: 240px
+
+.mat-button-base
+    margin: 5px    

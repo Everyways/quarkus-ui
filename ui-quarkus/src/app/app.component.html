@@ -6,76 +6,9 @@
 <mat-divider></mat-divider>
 <mat-divider inset vertical></mat-divider>
 
-<mat-grid-list cols="3" rowHeight="1:1">
-  <mat-grid-tile>
-    <mat-card class="heroes-card hero lost">
-      <mat-card-header>
-        <div mat-card-avatar><mat-icon>flare</mat-icon></div>
-        <mat-card-title>Snake Eyes</mat-card-title>
-        <mat-card-subtitle>Hero</mat-card-subtitle>
-      </mat-card-header>
-      <img
-        src="https://www.superherodb.com/pictures2/portraits/10/050/10436.jpg"
-        alt="Photo of a Snake Eyes hero"
-      />
-    </mat-card>
-  </mat-grid-tile>
 
-  <mat-grid-tile>
-    <mat-card class="action">
-      <div class="example-button-row">
-        <button mat-stroked-button class="primary">FIGHT !</button>
-        <button mat-stroked-button class="blank">NEW FIGHTERS</button>
-        <!-- <a mat-fab routerLink=".">Link</a> -->
-        <h2 class="center winner-text">Riddler wins!</h2>
-      </div>
-    </mat-card>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <mat-card class="heroes-card villain win" villain>
-      <mat-card-header>
-        <div mat-card-avatar><mat-icon>flare</mat-icon></div>
-        <mat-card-title>Riddler</mat-card-title>
-        <mat-card-subtitle>Villain</mat-card-subtitle>
-      </mat-card-header>
-      <img
-        mat-card-image
-        src="https://www.superherodb.com/pictures2/portraits/10/050/768.jpg"
-        alt="Photo of a Riddler villain"
-      />
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
-
-
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  <!-- id Column -->
-  <ng-container matColumnDef="id">
-    <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
-  </ng-container>
-
-  <!-- fight-date Column -->
-  <ng-container matColumnDef="fightDate">
-    <mat-header-cell *matHeaderCellDef> Fight Date </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.fightDate}} </mat-cell>
-  </ng-container>
-
-  <!-- winner Column -->
-  <ng-container matColumnDef="winner">
-    <mat-header-cell *matHeaderCellDef> Winner </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.winner}} </mat-cell>
-  </ng-container>
-
-  <!-- looser Column -->
-  <ng-container matColumnDef="looser">
-    <mat-header-cell *matHeaderCellDef> Looser </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.looser}} </mat-cell>
-  </ng-container>
-
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-</mat-table>
+<mat-divider></mat-divider>
+<app-fight></app-fight>
+<app-fight-list></app-fight-list>
 
 <router-outlet></router-outlet>

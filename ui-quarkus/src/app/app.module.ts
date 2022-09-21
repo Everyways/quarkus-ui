@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,16 +14,26 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatExpansionModule } from '@angular/material/expansion';
 
+
+import { SharedComponent } from './shared/shared.component';
+import { FightComponent } from './fight/fight.component';
+import { FightListComponent } from './fight-list/fight-list.component';
+import { FightService } from './shared';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SharedComponent,
+    FightComponent,
+    FightListComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
@@ -32,9 +43,10 @@ import { MatTableModule } from '@angular/material/table';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatExpansionModule
   ],
-  providers: [],
+  providers: [FightService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

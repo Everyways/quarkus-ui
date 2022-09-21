@@ -1,0 +1,13 @@
+@mixin box-shadow($shadow...)
+    -webkit-box-shadow: $shadow
+    -moz-box-shadow: $shadow
+    box-shadow: $shadow
+
+@mixin lost
+    -webkit-filter: grayscale(100%)
+    filter: grayscale(100%)
+    -webkit-filter: blur(5px)
+    filter: blur(2px)
+
+@mixin border()
+    border: thin solid white
