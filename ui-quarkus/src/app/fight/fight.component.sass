@@ -15,12 +15,12 @@
     @include box-shadow(7px -7px 9px $shadow-color, -7px 7px 9px $shadow-background-dark)
 
 .villain
-    @include border 
+    @include border
 
 .win
     border: 10px solid $win-color
 
-.lost 
+.lost
     @include lost
 
 .primary
@@ -46,4 +46,25 @@
         max-width: 240px
 
 .mat-button-base
-    margin: 5px    
+    margin: 5px
+
+.fighter-picture
+    height: 320px
+
+.winner-fight
+    font-size: 30pt
+    color: #fff
+    text-align: center
+
+.make-me-flash
+    margin: 0
+    height: 220px
+    width: 220px
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: #e91e63
+    border-radius: 100%
+    animation-name: flash
+    animation-duration: 1s
+    animation-iteration-count: infinite

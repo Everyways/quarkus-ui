@@ -14,11 +14,13 @@
         <mat-card-title>{{ figthers.hero?.name }}</mat-card-title>
         <mat-card-subtitle>Hero</mat-card-subtitle>
       </mat-card-header>
-      <img
-        class="center"
-        src="{{ figthers.hero?.picture }}"
-        alt="Photo of {{ figthers.hero?.name }} hero"
-      />
+      <div class="fighter-picture">
+        <img
+          class="center"
+          src="{{ figthers.hero?.picture }}"
+          alt="Picture of {{ figthers.hero?.name }} hero"
+        />
+      </div>
       <mat-card-content>
         <mat-accordion>
           <mat-expansion-panel
@@ -47,17 +49,14 @@
         <button (click)="newFighters()" mat-stroked-button class="blank">
           NEW FIGHTERS
         </button>
-        <h2 *ngIf="winner" class="center winner-text">
-          Winner is
-          <span
-            [className]="
-              winner == figthers.villain?.name
-                ? 'winner-villain'
-                : 'winner-hero'
-            "
-            >{{ winner }}</span
-          >
-        </h2>
+        <span *ngIf="winner">
+          <h2 class="center winner-text">Winner is</h2>
+          <div class="make-me-flash">
+            <h2 class="winner-fight">
+              {{ winner }}
+            </h2>
+          </div>
+        </span>
       </div>
     </mat-card>
   </mat-grid-tile>
@@ -77,10 +76,12 @@
         <mat-card-title>{{ figthers.villain?.name }}</mat-card-title>
         <mat-card-subtitle>Villain</mat-card-subtitle>
       </mat-card-header>
-      <img
-        src="{{ figthers.villain?.picture }}"
-        alt="Photo of {{ figthers.villain?.name }} villain"
-      />
+      <div class="fighter-picture">
+        <img
+          src="{{ figthers.villain?.picture }}"
+          alt="Picture of {{ figthers.villain?.name }} villain"
+        />
+      </div>
       <mat-card-content>
         <mat-accordion>
           <mat-expansion-panel
